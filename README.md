@@ -1,2 +1,2 @@
 # Jenkins-Example
-#test webhook-pipelne_test
+#test webhook-freestyle-test
