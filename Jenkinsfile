@@ -2,6 +2,7 @@ pipeline{
     agent any
     environment {
         gitURL = "https://github.com/jglick/simple-maven-project-with-tests.git"
+	    bfranch = "Dev-2"
     }
     stages{
         stage('git clone'){
@@ -25,6 +26,7 @@ pipeline{
 	        	script {
 		        	junit '**/target/surefire-reports/TEST-*.xml'
 		        	archive 'target/*.jar'
+				echo "You are in ${branch}"
 		        }
 	        }
         }
