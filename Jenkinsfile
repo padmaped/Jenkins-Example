@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment {
         gitURL = "https://github.com/jglick/simple-maven-project-with-tests.git"
-	    bfranch = "Dev-2"
+	    branch = "Dev-2"
     }
     stages{
         stage('git clone'){
