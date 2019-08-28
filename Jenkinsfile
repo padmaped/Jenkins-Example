@@ -1,17 +1,33 @@
-pipeline {
+pipeline{
     agent any
-    stages{
-        stage('Build'){
-            steps{
-              git 'https://github.com/Nagaraj4775/Jenkins-Example.git'
-          }
-        }
-        stage('upload'){
-            steps{
-              script{
-                  s3Upload consoleLogLevel: 'INFO', dontWaitForConcurrentBuildCompletion: false, entries: [[bucket: 'nagaraj-devops/uploaded', excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: false, selectedRegion: 'ap-southeast-1', showDirectlyInBrowser: false, sourceFile: 'output.csv', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false]], pluginFailureResultConstraint: 'FAILURE', profileName: 'S3-Role', userMetadata: []
-              }
-          }
-        }
-      }
+    environment {
+        gitURL = "https://github.com/jglick/simple-maven-project-with-tests.git"
     }
+    stages{
+        stage('git clone'){
+            steps{
+                script{
+                    cleanWs()
+                    git "${gitURL}"
+                }
+            }
+        }
+        stage('Jenkins Build'){
+            steps{
+                script{
+                    echo "We are in Jenkins build stage"
+                    sh "mvn clean package -Dmaven.test.failure.ignore=true"
+                }
+            }
+        }
+       stage('Generating Results') {
+	      steps{
+	        	script {
+		        	junit '**/target/surefire-reports/TEST-*.xml'
+		        	archive 'target/*.jar'
+		        }
+	        }
+        }
+        
+    }
+}
