@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    tools {
+        maven 'maven'
+    }
     environment {
         gitURL = "https://github.com/jglick/simple-maven-project-with-tests.git"
 	 branch = "Dev-1"
