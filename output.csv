@@ -1,0 +1,5 @@
+name,instance,type,hypervisor,virtualization_type,architecture,ebs_optimized,image_id,key_name,metric,low,high,ave,median,launch_time,subnet_id,vpc_id
+RegularMachine,i-02b9d147f802bb93b,t2.micro,xen,hvm,x86_64,False,ami-04677bdaa3c2b6e24,Nagaraj_AWS,CPUUtilization,0.169491525423728,36.8852459016393,4.08,0.500000000000007,2019-02-27 05:16:22+00:00,subnet-06150ebbe49987634,vpc-01e27ef01bb885339
+RegularMachine,i-02b9d147f802bb93b,t2.micro,xen,hvm,x86_64,False,ami-04677bdaa3c2b6e24,Nagaraj_AWS,MemoryUtilization,36.031084304883,77.1484390479738,59.84,65.9245638924334,2019-02-27 05:16:22+00:00,subnet-06150ebbe49987634,vpc-01e27ef01bb885339
+Ansible_test,i-0450d98ec3cb78bf8,t2.micro,xen,hvm,x86_64,False,ami-04677bdaa3c2b6e24,Nagaraj_AWS,CPUUtilization,0.166666666666666,27.0,1.88,0.327868852459021,2019-02-27 14:01:06+00:00,subnet-06150ebbe49987634,vpc-01e27ef01bb885339
+Ansible_test,i-0450d98ec3cb78bf8,t2.micro,xen,hvm,x86_64,False,ami-04677bdaa3c2b6e24,Nagaraj_AWS,MemoryUtilization,0,0,0.0,0.0,2019-02-27 14:01:06+00:00,subnet-06150ebbe49987634,vpc-01e27ef01bb885339
