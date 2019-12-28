@@ -5,6 +5,7 @@ pipeline{
     }
     environment {
         //gitURL = "https://github.com/jglick/simple-maven-project-with-tests.git"
+	    // testing
         gitURL = "https://github.com/Nagaraj4775/Jenkins-Example.git"
     }
     stages{
