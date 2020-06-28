@@ -4,7 +4,7 @@
 testPipeline {
     description = "Test Pipeline from Jenkins"
     autoDeploy = false
-    codeAnalysis = false
+    codeAnalysis = true
     publishToArtifactory = false	
     emailTo = "nagaraj4775@gmail.com"
     publishToYUM = false
