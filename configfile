@@ -1,0 +1,13 @@
+#!groovy
+@Library("shared-library") _
+
+testPipeline {
+    description = "Test Pipeline from Jenkins"
+    autoDeploy = false
+    codeAnalysis = false
+    publishToArtifactory = false	
+    emailTo = "nagaraj4775@gmail.com"
+    publishToYUM = false
+    buildBranches =  ["master", "staging", "Release_1.0"]
+    mavenCommand = "clean package"
+}
