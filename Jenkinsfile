@@ -5,7 +5,7 @@ pipeline{
     }
     environment {
         //gitURL = "https://github.com/jglick/simple-maven-project-with-tests.git"
-        gitURL = "https://github.com/Nagaraj4775/Jenkins-Example.git"
+        gitURL = "https://github.com/padmaped/Jenkins-Example.git"
     }
     stages{
         stage('git clone'){
