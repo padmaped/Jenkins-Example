@@ -1,3 +1,4 @@
 FROM alpine:3.11
-COPY hello /
-CMD ["/hello"]
+RUN apt-get update
+RUN apt-get install -y nginx
+RUN echo "hello world"
